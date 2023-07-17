@@ -15,13 +15,13 @@ using namespace std;
 
 int main()
 {
-    /*Graph g; // 创建一张新的图
+    /*Graph g;
     UndirectedGraph h;
     WeightedGraph<string> i;
     assert(g.AddVertex(1) == true);
     assert(g.AddVertex(2) == true);
     assert(g.AddVertex(3) == true);
-    assert(g.AddVertex(3) == false); // 3号点已经存在了
+    assert(g.AddVertex(3) == false);
     assert(g.AddVertex(4) == true);
     assert(g.ContainsVertex(4) == true);
     assert(g.RemoveVertex(4) == true);
@@ -30,7 +30,7 @@ int main()
 
     assert(g.AddEdge(1, 2) == true);
     assert(g.AddEdge(1, 3) == true);
-    assert(g.AddEdge(2, 5) == false); // 5号点不存在
+    assert(g.AddEdge(2, 5) == false);
     assert(g.ContainsEdge(1, 2) == true);
     assert(g.ContainsEdge(2, 5) == false);
 
