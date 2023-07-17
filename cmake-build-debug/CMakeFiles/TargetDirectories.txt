@@ -1,0 +1,6 @@
+C:/Users/frank/graphic/cmake-build-debug/CMakeFiles/GraphLibrary.dir
+C:/Users/frank/graphic/cmake-build-debug/CMakeFiles/GitTraceAdd.dir
+C:/Users/frank/graphic/cmake-build-debug/CMakeFiles/GitTraceCommit.dir
+C:/Users/frank/graphic/cmake-build-debug/CMakeFiles/Test01.dir
+C:/Users/frank/graphic/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/frank/graphic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
