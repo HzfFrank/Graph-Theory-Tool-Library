@@ -82,3 +82,25 @@ The ```WeightedEdge``` class represents a *directed edge* with an `int` type wei
 - `int GetSource() const`
 - `int GetDestination() const`
 - `int GetWeight() const`：Obtain the weight of the edge
+
+**```WeightedGraph```**
+
+The `WeightedGraph` class represents a *directed graph* composed of *directed edges* with `int` type weights. It has a constructor, a destructor, and fifteen interfaces:
+
+- `WeightedGraph()`
+- `~WeightedGraph()`
+- `bool AddVertex(int vertex)`
+- `bool RemoveVertex(int vertex)`
+- `bool AddEdge(int vertex1, int vertex2, int weight)`
+- `bool RemoveEdge(int vertex1, int vertex2)`
+- `int CountVertices() const`
+- `int CountEdges() const`
+- `bool ContainsVertex(int vertex) const`
+- `bool ContainsEdge(int vertex1, int vertex2) const`
+- `int GetWeight(int vertex1, int vertex2) const`：Query the weight of the edge from `vertex1` pointing to `vertex2`, if this edge does not exist, it is UB (Undefined Behavior), you can return any value
+- `std::vector<int> GetVertices() const`
+- `std::vector<WeightedEdge> GetEdges() const`
+- `std::vector<WeightedEdge> GetIncomingEdges(int vertex) const`
+- `std::vector<WeightedEdge> GetOutgoingEdges(int vertex) const`
+- `int GetDegree(int vertex) const`
+- `std::vector<int> GetNeighbors(int vertex) const`
