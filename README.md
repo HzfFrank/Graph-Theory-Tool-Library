@@ -72,3 +72,12 @@ assert(g.GetDegree(1) == 2);
 assert(g.GetNeighbors(1).size() == 2); // {2, 3}
 assert(g.GetNeighbors(2).size() == 0);
 ```
+
+**```WeightedEdge```**
+
+The ```WeightedEdge``` class represents a *directed edge* with an `int` type weight, which has a constructor, a destructor, and three interfaces:
+
+- `Edge(int source, int destination)`：Construct an edge object starting from ```source``` and ending at ```destination```
+- `~Edge()`：Destroy the edge
+- `int GetSource() const`：Obtain the starting point's id
+- `int GetDestination() const`：Obtain the endpoint's id
