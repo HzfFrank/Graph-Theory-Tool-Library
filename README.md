@@ -14,6 +14,14 @@ The ```Edge``` class represents a *directed edge*, which has a constructor, a de
 - `int GetSource() const`：Obtain the starting point's id
 - `int GetDestination() const`：Obtain the endpoint's id
 
+Using examples
+
+```
+Edge e(1, 2); // Create a directed edge from 1 to 2
+assert(e.GetSource() == 1);
+assert(e.GetDestination() == 2);
+```
+
 **```Graph```**
 
 The ```Graph``` class represents a *directed and unweighted* graph, which has a constructor, destructor, and fourteen interfaces:
@@ -34,3 +42,33 @@ The ```Graph``` class represents a *directed and unweighted* graph, which has a 
 - `std::vector<Edge> GetOutgoingEdges(int vertex) const`：Get the outcoming edge list of a vertex, if the vertex does not exist, return an empty list
 - `int GetDegree(int vertex) const`：Returns the degree of the vertex with the specified id (the degree of the directed graph is the out degree), and returns 0 if the vertex does not exist
 - `std::vector<int> GetNeighbors(int vertex) const`：Get the neighbor list of a vertex (the neighbor of the directed graph is the vertex pointed to by the outgoing edge), if the vertex does not exist, return an empty list
+
+Using examples
+
+```
+Graph g; // Build a new graph
+
+assert(g.AddVertex(1) == true);
+assert(g.AddVertex(2) == true);
+assert(g.AddVertex(3) == true);
+assert(g.AddVertex(3) == false); // Vertex 3 already exists
+assert(g.AddVertex(4) == true);
+assert(g.ContainsVertex(4) == true);
+assert(g.RemoveVertex(4) == true);
+assert(g.ContainsVertex(4) == false);
+assert(g.RemoveVertex(5) == false);
+
+assert(g.AddEdge(1, 2) == true);
+assert(g.AddEdge(1, 3) == true);
+assert(g.AddEdge(2, 5) == false); // Vertex 5 does not exist
+assert(g.ContainsEdge(1, 2) == true);
+assert(g.ContainsEdge(2, 5) == false);
+
+assert(g.GetVertices().size() == g.CountVertices()); // 4
+assert(g.GetEdges().size() == 2);
+assert(g.GetIncomingEdges(1).size() == 0);
+assert(g.GetOutgoingEdges(1).size() == 2); // {{1, 2}, {1, 3}}
+assert(g.GetDegree(1) == 2);
+assert(g.GetNeighbors(1).size() == 2); // {2, 3}
+assert(g.GetNeighbors(2).size() == 0);
+```
