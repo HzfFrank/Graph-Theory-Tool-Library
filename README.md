@@ -16,7 +16,7 @@ The ```Edge``` class represents a *directed edge*, which has a constructor, a de
 
 **```Graph```**
 
-The ```Graph``` class represents a directed and unauthorized graph, which has a constructor, destructor, and fourteen interfaces:
+The ```Graph``` class represents a *directed and unweighted* graph, which has a constructor, destructor, and fourteen interfaces:
 
 - `Graph()`：Construct a graph
 - `~Graph()`：Destroy the graph
