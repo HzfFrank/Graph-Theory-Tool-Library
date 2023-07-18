@@ -32,5 +32,5 @@ The ```Graph``` class represents a *directed and unweighted* graph, which has a 
 - `std::vector<Edge> GetEdges() const`：Get a list of all edges in the graph
 - `std::vector<Edge> GetIncomingEdges(int vertex) const`：Get the incoming edge list of a vertex, if the vertex does not exist, return an empty list
 - `std::vector<Edge> GetOutgoingEdges(int vertex) const`：Get the outcoming edge list of a vertex, if the vertex does not exist, return an empty list
-- `int GetDegree(int vertex) const`：返回指定编号的点的度（有向图的度就是出度），如果点不存在返回0
-- `std::vector<int> GetNeighbors(int vertex) const`：获取某个点的邻居列表（有向图的邻居就是出边指向的点），如果点不存在返回空列表
+- `int GetDegree(int vertex) const`：Returns the degree of the vertex with the specified id (the degree of the directed graph is the out degree), and returns 0 if the vertex does not exist
+- `std::vector<int> GetNeighbors(int vertex) const`：Get the neighbor list of a vertex (the neighbor of the directed graph is the vertex pointed to by the outgoing edge), if the vertex does not exist, return an empty list
