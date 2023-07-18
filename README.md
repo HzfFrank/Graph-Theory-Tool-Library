@@ -97,7 +97,7 @@ The `WeightedGraph` class represents a *directed graph* composed of *directed ed
 - `int CountEdges() const`
 - `bool ContainsVertex(int vertex) const`
 - `bool ContainsEdge(int vertex1, int vertex2) const`
-- `int GetWeight(int vertex1, int vertex2) const`：Query the weight of the edge from `vertex1` pointing to `vertex2`, if this edge does not exist, it is UB (Undefined Behavior), you can return any value
+- `int GetWeight(int vertex1, int vertex2) const`：Query the weight of the edge from `vertex1` pointing to `vertex2`, if this edge does not exist, it is UB (Undefined Behavior) and will return 0
 - `std::vector<int> GetVertices() const`
 - `std::vector<WeightedEdge> GetEdges() const`
 - `std::vector<WeightedEdge> GetIncomingEdges(int vertex) const`
