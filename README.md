@@ -28,14 +28,14 @@ The ```Graph``` class represents a *directed and unweighted* graph, which has a 
 
 - `Graph()`：Construct a graph
 - `~Graph()`：Destroy the graph
-- `bool AddVertex(int vertex)`：Add a vertex with a specified number. If the addition is successful, return 'true'. If the point already exists, return 'false'
-- `bool RemoveVertex(int vertex)`：Delete the vertex with the specified number. If the deletion is successful, return 'true'. If the point does not exist, return 'false'
-- `bool AddEdge(int vertex1, int vertex2)`：Add a directed edge from 'vertex1' to 'vertex2', if the addition is successful, return 'true', if the point does not exist or the edge already exists, return 'false'
-- `bool RemoveEdge(int vertex1, int vertex2)`：Delete the directed edge from 'vertex1' pointing to 'vertex2', if the deletion is successful, return 'true', if the vertex does not exist or the edge does not exist, return 'false'
+- `bool AddVertex(int vertex)`：Add a vertex with a specified number. If the addition is successful, return `true`. If the point already exists, return `false`
+- `bool RemoveVertex(int vertex)`：Delete the vertex with the specified number. If the deletion is successful, return `true`. If the point does not exist, return `false`
+- `bool AddEdge(int vertex1, int vertex2)`：Add a directed edge from `vertex1` to `vertex2`, if the addition is successful, return `true`, if the point does not exist or the edge already exists, return `false`
+- `bool RemoveEdge(int vertex1, int vertex2)`：Delete the directed edge from `vertex1` pointing to `vertex2`, if the deletion is successful, return `true`, if the vertex does not exist or the edge does not exist, return `false`
 - `int CountVertices() const`：Return the number of vertices
 - `int CountEdges() const`：Return the number of edges
 - `bool ContainsVertex(int vertex) const`：Determine whether the vertex with the specified number exists
-- `bool ContainsEdge(int vertex1, int vertex2) const`：Determine whether the edge from 'vertex1' to 'vertex2' exists
+- `bool ContainsEdge(int vertex1, int vertex2) const`：Determine whether the edge from `vertex1` to `vertex2` exists
 - `std::vector<int> GetVertices() const`：Get a list of all vertices in the graph
 - `std::vector<Edge> GetEdges() const`：Get a list of all edges in the graph
 - `std::vector<Edge> GetIncomingEdges(int vertex) const`：Get the incoming edge list of a vertex, if the vertex does not exist, return an empty list
