@@ -112,3 +112,8 @@ The `UndirectedGraph` class represents *undirected and unweighted graph*, and al
 **```UndirectedWeightedGraph```**
 
 The `UndirectedWeightedGraph` class represents *undirected weighted graph*, and all interfaces of it are exactly the same as the directed weighted graph (`WeightedGraph` class)
+
+**```BreadthFirstSearcher```** and **```DepthFirstSearcher```**
+
+- `void VisitAllVertices(const TGraph *graph, int start, const std::function<void(int)> &action)` means to traverse all traversable vertices from the starting vertex (`start`) in a width-first or depth-first manner, and Call the `action` operation on these vertices. `action` is called at most once per vertex.
+- `std::optional<int> FindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate)` means to traverse all possible vertices from the starting point (start) in a width-first or depth-first manner Traverse the points and find the number of the first point that satisfies the predicate `predicate`. Since there may not be such a point, we use `std::optional<int>` as the return value type, which shows that it may be empty. If found, return the optional container containing the point number, otherwise, return an empty container.
