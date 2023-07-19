@@ -104,3 +104,11 @@ The `WeightedGraph` class represents a *directed graph* composed of *directed ed
 - `std::vector<WeightedEdge> GetOutgoingEdges(int vertex) const`
 - `int GetDegree(int vertex) const`
 - `std::vector<int> GetNeighbors(int vertex) const`
+
+**```UndirectedGraph```**
+
+The `UndirectedGraph` class represents *undirected and unweighted graph*, and all interfaces of the it are exactly the same as the directed and unweighted graph (`Graph` class)
+
+**```UndirectedWeightedGraph```**
+
+The `UndirectedWeightedGraph` class represents *undirected weighted graph*, and all interfaces of it are exactly the same as the directed weighted graph (`WeightedGraph` class)
