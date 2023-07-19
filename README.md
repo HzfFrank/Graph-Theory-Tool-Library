@@ -120,8 +120,51 @@ The `UndirectedWeightedGraph` class represents *undirected weighted graph*, and 
 
 **```DijkstraShortestPaths```**
 
+Based on Dijkstra algorithm.
+
 - `DijkstraShortestPaths(const TGraph *graph, int source)`
 - `~DijkstraShortestPaths()`
 - `bool HasPathTo(int)`：Returns whether there is a path from the start vertex to the end vertex
-- `std::optional<TValue> TryGetDistanceTo(int)`：Returns the weight of the shortest path from the start point to the end point. If there is no path, it returns empty. The distance from the start point is defined as the default value `TValue()` of `TValue` type.
+- `std::optional<TValue> TryGetDistanceTo(int)`：Returns the weight of the shortest path from the start point to the end point. If there is no path, it returns empty. The distance from the start vertex is defined as the default value `TValue()` of `TValue` type.
 - `std::optional<std::vector<int>> TryGetShortestPathTo(int)`：Returns the numbers of all vertices on a shortest path from the start vertex to the end vertex (including the start vertex and end vertex). If there are no vertices, it returns empty, and if there are multiple vertices, it returns a random one.
+
+Using examples:
+
+```
+auto *g = new WeightedGraph<int>();
+for (int i = 1; i <= 6; ++i) {
+  g->AddVertex(i);
+}
+g->AddEdge(1, 2, 1);
+g->AddEdge(2, 3, 2);
+g->AddEdge(3, 4, 3);
+g->AddEdge(4, 1, 4);
+g->AddEdge(5, 6, 5);
+g->AddEdge(6, 5, 6);
+
+ShortestPaths<WeightedGraph, int> *p = nullptr;
+for (int i = 1; i <= 6; ++i) {
+  p = new DijkstraShortestPaths<WeightedGraph, int>(g, i);
+  for (int j = 1; j <= 6; ++j) {
+    printf("%d", p->HasPathTo(j));
+  }
+  printf("\n");
+  delete p;
+}
+
+delete g;
+```
+
+**```BellmanFordShortestPaths```**
+
+It is similar with `DijkstraShortestPaths` but use Bellman-Ford algorithm instead.
+
+**```FloydShortestPaths```**
+
+It is similar with `DijkstraShortestPaths` and `BellmanFordShortestPaths` but use Floyd algorithm instead.
+
+- `FloydShortestPaths(const TGraph *graph)`
+- `~FloydShortestPaths()`
+- `bool HasPathOf(int, int)`: Returns whether there is a path from the start vertex to the end vertex.
+- `std::optional<TValue> TryGetDistanceOf(int, int)`: Returns the weight of the shortest path from the start point to the end point. If there is no path, it returns empty. The distance from the start vertex is defined as the default value `TValue()` of `TValue` type.
+- `std::optional<std::vector<int>> TryGetShortestPathOf(int, int)`：Returns the numbers of all vertices on a shortest path from the start vertex to the end vertex (including the start vertex and end vertex). If there are no vertices, return empty, and if there are multiple vertices, return a random one.
