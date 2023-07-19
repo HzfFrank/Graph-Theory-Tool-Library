@@ -3,7 +3,7 @@ Here is a graph theory tool library, it provides several APIs for users to const
 
 You can see the ```tests/01-hello-world.cpp``` for examples and perform your desired operations in it.
 
-Here are the APIs and learn how to use it:
+Here are the APIs and you can learn how to use it here:
 
 **```Edge```**
 
