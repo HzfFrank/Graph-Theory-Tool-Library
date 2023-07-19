@@ -5,6 +5,8 @@ You can see the ```tests/01-hello-world.cpp``` for examples and perform your des
 
 Here are the APIs and you can learn how to use it here:
 
+## DataStructures
+
 **```Edge```**
 
 The ```Edge``` class represents a *directed edge*, which has a constructor, a destructor, and two interfaces:
@@ -112,6 +114,8 @@ The `UndirectedGraph` class represents *undirected and unweighted graph*, and al
 **```UndirectedWeightedGraph```**
 
 The `UndirectedWeightedGraph` class represents *undirected weighted graph*, and all interfaces of it are exactly the same as the directed weighted graph (`WeightedGraph` class)
+
+## Algorithms
 
 **```BreadthFirstSearcher```** and **```DepthFirstSearcher```**
 
