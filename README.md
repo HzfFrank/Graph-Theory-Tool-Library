@@ -116,4 +116,12 @@ The `UndirectedWeightedGraph` class represents *undirected weighted graph*, and 
 **```BreadthFirstSearcher```** and **```DepthFirstSearcher```**
 
 - `void VisitAllVertices(const TGraph *graph, int start, const std::function<void(int)> &action)` means to traverse all traversable vertices from the starting vertex (`start`) in a width-first or depth-first manner, and Call the `action` operation on these vertices. `action` is called at most once per vertex.
-- `std::optional<int> FindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate)` means to traverse all possible vertices from the starting point (start) in a width-first or depth-first manner Traverse the points and find the number of the first point that satisfies the predicate `predicate`. Since there may not be such a point, we use `std::optional<int>` as the return value type, which shows that it may be empty. If found, return the optional container containing the point number, otherwise, return an empty container.
+- `std::optional<int> TryFindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate)` means to traverse all possible vertices from the starting point (start) in a width-first or depth-first manner Traverse the points and find the number of the first point that satisfies the predicate `predicate`. Since there may not be such a point, we use `std::optional<int>` as the return value type, which shows that it may be empty. If found, return the optional container containing the point number, otherwise, return an empty container.
+
+**```DijkstraShortestPaths```**
+
+- `DijkstraShortestPaths(const TGraph *graph, int source)`
+- `~DijkstraShortestPaths()`
+- `bool HasPathTo(int)`：Returns whether there is a path from the start vertex to the end vertex
+- `std::optional<TValue> TryGetDistanceTo(int)`：Returns the weight of the shortest path from the start point to the end point. If there is no path, it returns empty. The distance from the start point is defined as the default value `TValue()` of `TValue` type.
+- `std::optional<std::vector<int>> TryGetShortestPathTo(int)`：Returns the numbers of all vertices on a shortest path from the start vertex to the end vertex (including the start vertex and end vertex). If there are no vertices, it returns empty, and if there are multiple vertices, it returns a random one.
